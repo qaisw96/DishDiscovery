@@ -5,23 +5,23 @@ const useGetApi = (url) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchData = async () => {
-    setIsLoading(true);
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
-      }
-      const result = await response.json();
-      setData(result);
-    } catch (error) {
-      setError('Oops something went wrong, please try again');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        setError('Oops something went wrong, please try again');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
     fetchData();
   }, [url]);
 
