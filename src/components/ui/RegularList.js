@@ -8,15 +8,24 @@ const RegularList = ({
   itemsContainerStyle,
   listHeader,
   itemProps,
+  listEmptyComponent,
 }) => {
   return (
     <section className={containerStyle}>
       {listHeader && listHeader}
-      <div className={itemsContainerStyle}>
-        {items?.map((item, i) => (
-          <ItemComponent key={i} {...{ [resourceName]: item }} {...itemProps} />
-        ))}
-      </div>
+      {items?.length > 0 ? (
+        <div className={itemsContainerStyle}>
+          {items?.map((item, i) => (
+            <ItemComponent
+              key={i}
+              {...{ [resourceName]: item }}
+              {...itemProps}
+            />
+          ))}
+        </div>
+      ) : (
+        listEmptyComponent
+      )}
     </section>
   );
 };

@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import RegularList from 'components/ui/RegularList';
 import ListHeader from 'components/ui/ListHeader';
 import Recipe from 'components/Recipe';
+import EmptyListMessage from './ui/EmptyListMessage';
 
 const Recipes = ({ data }) => {
   const MemoizedRecipeComponent = useCallback(Recipe, []);
@@ -14,6 +15,7 @@ const Recipes = ({ data }) => {
       resourceName='recipe'
       itemComponent={MemoizedRecipeComponent}
       listHeader={<ListHeader title='Our Recipes' />}
+      listEmptyComponent={<EmptyListMessage message='Oops, No Results Find' />}
     />
   );
 };
