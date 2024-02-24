@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+> # DishDiscovery App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Is a platform that brings the world of delectable recipes to your fingertips
 
-## Available Scripts
+> ## File Structure explanation
 
-In the project directory, you can run:
+1. ### src
+   The root of your source code. It contains all the code that is part of the application.
+2. ### components
+   Holds all the React components used in the application
+   > [!NOTE]
+   > ui subdirectory under components likely contains reusable UI components that are more abstract and can be used across different parts of the application
+3. ### hooks
+   The hooks directory is likely where custom React hooks stored
+4. ### routes
+   Define the routes of the application
+5. ### util
+   Used for utility functions or helper modules
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> ## Used Approaches
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Mapping Approach
 
-### `npm test`
+By using RegularList component to render a list of items
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This approach is beneficial for several reasons
 
-### `npm run build`
+1. **Reusability**
+   Reuse this component throughout the application for different lists, reducing code duplication
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Customization**
+   Flexibility to pass in a custom ItemComponent allows to customize the appearance and behavior of each list item without modifying the core logic of the list component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Separation**
+   The RegularList component focuses on the structure and layout of the list, while the rendering of individual items is delegated to the ItemComponent
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Scalability**
+   Can handle various types of lists and items by extending or creating new components without major modifications to existing code
 
-### `npm run eject`
+### Search Approach
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Using URL parameters for search offers several advantages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Bookmarking and Sharing**
+   URL parameters make it easy for users to bookmark or share specific search results by Link
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **History Navigation**
+   Using URL parameters allows users to navigate through their search history using the browser's back and forward buttons
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **State Persistence**
+   Storing search parameters in the URL ensures that users don't lose their search context when they refresh
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> ## How to run the application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the application on your machine by
+   `git clone <webUrl>`
+2. Navigate to the Project Directory
+   cd recipes
+3. Install Dependencies by
+   `npm install`
+4. Create **.env** file in the root of project and add the **environment variables** to it
+   > [!NOTE]
+   > environment variables will be provided by email
+5. Finally run the application by
+   `npm start`
