@@ -18,7 +18,7 @@ const RecipeRoute = () => {
     isLoading,
     error,
   } = useGetApi(
-    `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=1d5cb95a3155400dbbbb0a8f05da0f4c`
+    `https://api.spoonacular.com/recipes/${recipeId}/summary?apiKey=${process.env.REACT_APP_API_KEY}`
   );
 
   const renderRecipeOverview = () => {

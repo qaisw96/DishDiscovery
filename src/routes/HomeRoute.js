@@ -18,7 +18,7 @@ const HomeRoute = () => {
 
   const [recipesNumbers, setRecipesNumbers] = useState(INITIAL_RECIPES);
 
-  const endpointUrl = `${process.env.REACT_APP_BASE_URL}?apiKey=1d5cb95a3155400dbbbb0a8f05da0f4c&number=${recipesNumbers}&query=${searchParam}`;
+  const endpointUrl = `${process.env.REACT_APP_BASE_URL}?apiKey=${process.env.REACT_APP_API_KEY}&number=${recipesNumbers}&query=${searchParam}`;
   const { data, isLoading, error } = useGetApi(endpointUrl);
   const totalResults = data?.totalResults;
 
