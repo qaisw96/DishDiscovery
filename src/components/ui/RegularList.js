@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 const RegularList = ({
   items,
@@ -21,4 +21,4 @@ const RegularList = ({
   );
 };
 
-export default RegularList;
+export default memo(RegularList);

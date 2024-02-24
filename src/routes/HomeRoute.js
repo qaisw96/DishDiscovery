@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import useGetApi from '../hooks/useGetApi';
-import { transformRecipes } from '../util/transformation/recipes';
+import useGetApi from 'hooks/useGetApi';
+import { transformRecipes } from 'util/transformation/recipes';
 
-import Button from '../components/ui/Button';
-import ErrorMessage from '../components/ui/ErrorMessage';
-import Recipes from '../components/Recipes';
-import RecipesSkeleton from '../components/ui/RecipesSkeleton';
+import Button from 'components/ui/Button';
+import ErrorMessage from 'components/ui/ErrorMessage';
+import Recipes from 'components/Recipes';
+import RecipesSkeleton from 'components/ui/RecipesSkeleton';
 
 const INITIAL_RECIPES = 12;
 

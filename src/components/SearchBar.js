@@ -6,7 +6,7 @@ const SearchBar = () => {
   const navigate = useNavigate();
   const [isStartSearch, setIsStartSearch] = useState(false);
 
-  const handleStartSearch = (event) =>
+  const onSearchChange = (event) =>
     setIsStartSearch(Boolean(event.target.value));
 
   const onSubmit = (event) => {
@@ -25,7 +25,7 @@ const SearchBar = () => {
         class='bg-gray-50 border-[1px] border-primary border-dashed outline-0 text-gray-900 h-[45px] text-[18px] px-2 rounded-[4px]  block w-full p-1 '
         placeholder='Search'
         required
-        onChange={handleStartSearch}
+        onChange={onSearchChange}
       />
       <button
         className={`absolute p-3 top-0 right-0 transition-all duration-500 ${

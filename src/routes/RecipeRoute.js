@@ -3,11 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 
-import useGetApi from '../hooks/useGetApi';
+import useGetApi from 'hooks/useGetApi';
 
-import ErrorMessage from '../components/ui/ErrorMessage';
-import RecipeOverview from '../components/RecipeOverview';
-import RecipeOverviewSkeleton from '../components/ui/RecipeOverviewSkeleton';
+import ErrorMessage from 'components/ui/ErrorMessage';
+import RecipeOverview from 'components/RecipeOverview';
+import RecipeOverviewSkeleton from 'components/ui/RecipeOverviewSkeleton';
 
 const RecipeRoute = () => {
   const navigate = useNavigate();

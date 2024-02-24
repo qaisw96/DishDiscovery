@@ -2,20 +2,23 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Recipe = ({ recipe }) => {
-  const { id, image, title } = recipe;
-
   const navigate = useNavigate();
   const navigateToRecipe = (recipeId) => navigate(`/recipes/${recipeId}`);
 
   return (
     <article
-      onClick={() => navigateToRecipe(id)}
-      key={id}
+      onClick={() => navigateToRecipe(recipe?.id)}
+      key={recipe?.id}
       className='rounded-sm p-3 border-[.4px] border-dashed border-primary bg-secondary cursor-pointer'>
-      <img src={image} alt={title} loading='lazy' className='rounded-sm' />
+      <img
+        src={recipe?.image}
+        alt={recipe?.title}
+        loading='lazy'
+        className='rounded-sm'
+      />
       <div className='mt-2'>
         <h3 className='overflow-hidden text-ellipsis whitespace-nowrap text-primary'>
-          {title}
+          {recipe?.title}
         </h3>
       </div>
     </article>
